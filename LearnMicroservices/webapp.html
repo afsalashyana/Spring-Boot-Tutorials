@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .card {
+            width: 300px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            color: #333;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            padding: 10px;
+            color: #666;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container" id="video-cards"></div>
+
+    <script>
+        fetch('http://localhost:8080/movie-info/list')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('video-cards');
+                data.forEach(video => {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+
+                    const title = document.createElement('div');
+                    title.classList.add('card-title');
+                    title.textContent = video.name;
+
+                    const videoContainer = document.createElement('div');
+                    videoContainer.classList.add('video-container');
+
+                    const videoElement = document.createElement('video');
+                    videoElement.controls = true;
+
+                    videoElement.onloadedmetadata = function() {
+                        this.currentTime = 2;
+                    };
+
+                    videoElement.onseeked = function() {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = this.videoWidth;
+                        canvas.height = this.videoHeight;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(this, 0, 0, canvas.width, canvas.height);
+                        const thumbnail = canvas.toDataURL('image/jpeg');
+                        card.style.backgroundImage = `url(${thumbnail})`;
+                    };
+
+                    videoElement.src = `http://localhost:8080/stream/with-id/${video.id}`;
+                    videoElement.poster = `http://localhost:8080/stream/with-id/${video.id}`;
+
+                    const description = document.createElement('div');
+                    description.classList.add('card-description');
+                    description.textContent = video.description;
+
+                    videoContainer.appendChild(videoElement);
+                    card.appendChild(title);
+                    card.appendChild(videoContainer);
+                    card.appendChild(description);
+                    container.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error fetching videos:', error));
+    </script>
+</body>
+</html>
