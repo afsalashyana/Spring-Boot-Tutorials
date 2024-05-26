@@ -34,3 +34,11 @@ Beginner's Guide to [Spring Boot](https://spring.io/projects/spring-boot): A Tut
     <img height="300" src="https://i.imgur.com/apG3HPD.png">
   </a>
 </p>
+
+### [JSON Webtoken Tutorial](https://youtu.be/couxT4GfdcY)
+Tutorial about JSON Web Token (JWT) using Spring boot
+<p align="left">
+  <a href="https://youtu.be/couxT4GfdcY">
+    <img height="300" src="https://i.imgur.com/OEvadzG.png">
+  </a>
+</p>
