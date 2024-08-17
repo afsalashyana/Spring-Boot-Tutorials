@@ -50,3 +50,19 @@ Tutorial about File Manager for spring boot. Upload, list and download files wit
     <img height="300" src="https://i.imgur.com/Q9FxPGf.jpeg">
   </a>
 </p>
+
+### [OAuth2 Google Social Login](https://youtu.be/tIaWE9WthSQ)
+Tutorial about social login (OAuth2) with Google account. Use details provided by Google to create profile page.
+<p align="left">
+  <a href="https://youtu.be/tIaWE9WthSQ">
+    <img height="300" src="https://i.imgur.com/bWSTfBd.jpeg">
+  </a>
+</p>
+
+### [Send emails using spring-boot-starter-mail](https://youtu.be/kLMUS0-PznE)
+Learn how to send plain-text emails, emails with attachments, and HTML emails.
+<p align="left">
+  <a href="https://youtu.be/kLMUS0-PznE">
+    <img height="300" src="https://i.imgur.com/B46c7ts.jpeg">
+  </a>
+</p>
