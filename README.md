@@ -66,3 +66,11 @@ Learn how to send plain-text emails, emails with attachments, and HTML emails.
     <img height="300" src="https://i.imgur.com/B46c7ts.jpeg">
   </a>
 </p>
+
+### [Unit testing](https://youtu.be/id_esCeLZBo)
+Master Unit Testing for every layer of your Spring Boot Application with JUnit, Mockito, and Spring-Security-Test.
+<p align="left">
+  <a href="https://youtu.be/id_esCeLZBo">
+    <img height="300" src="https://i.imgur.com/SKLgPl3.jpeg">
+  </a>
+</p>
