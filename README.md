@@ -74,3 +74,11 @@ Master Unit Testing for every layer of your Spring Boot Application with JUnit, 
     <img height="300" src="https://i.imgur.com/SKLgPl3.jpeg">
   </a>
 </p>
+
+### [Spring AI Framework Tutorial](https://youtu.be/Dzr1IqWy0nk)
+Learn to integrate state of the art AI features into your existing Spring applications.
+<p align="left">
+  <a href="https://youtu.be/Dzr1IqWy0nk">
+    <img height="300" src="https://i.imgur.com/K3mxkx0.jpeg">
+  </a>
+</p>
